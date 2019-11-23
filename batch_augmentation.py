@@ -119,7 +119,7 @@ def main():
                          transforms.Lambda(lambda crops: torch.stack([transforms.ToTensor()(crop) for crop in crops])),  # returns a 4D tensor
                          transforms.Lambda(lambda crops: torch.stack([normalize(crop) for crop in crops]))
                          ])
-    trainset = CIFAR10(root="../../../../../../../../opt/public/", train=True,
+    trainset = CIFAR10(root="./data/", train=True,
                        download=True, transform=train_transform)
 
     net = Net()
